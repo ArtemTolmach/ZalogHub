@@ -1,0 +1,143 @@
+.list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 12px 0 16px;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  min-height: 62px;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #ecece7;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(38, 39, 34, .035);
+  animation: rowIn .18s ease both;
+  transition: border-color .15s ease, box-shadow .15s ease;
+
+  &:hover {
+    border-color: #dfe5dc;
+    box-shadow: 0 3px 10px rgba(38, 39, 34, .06);
+  }
+}
+
+.completed {
+  background: #fcfcfa;
+
+  .checkButton { border-color: var(--accent); background: var(--accent); }
+  .text { color: #9fa099; text-decoration: line-through; text-decoration-color: #c4c6bf; }
+  .description {
+    border-color: #f0f0ec;
+    background: #f7f7f4;
+    color: #a5a69f;
+  }
+}
+
+.checkButton {
+  display: grid;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  place-items: center;
+  padding: 0;
+  border: 1.5px solid #c9cbc4;
+  border-radius: 50%;
+  background: #fff;
+  transition: background .15s ease, border-color .15s ease;
+
+  &:hover { border-color: #819783; }
+
+  svg {
+    width: 13px;
+    height: 13px;
+    stroke: #fff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+  }
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding-top: 2px;
+}
+
+.text {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #41423d;
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1.4;
+}
+
+.description {
+  display: block;
+  padding: 8px 10px;
+  border: 1px solid #eef1ec;
+  border-radius: 7px;
+  background: #f8faf7;
+  overflow-wrap: anywhere;
+  color: #73766f;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.deleteButton {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: #a6a79f;
+  transition: background .15s ease, color .15s ease;
+
+  &:hover { background: #f8efed; color: #a14f42; }
+
+  svg {
+    width: 17px;
+    height: 17px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.35;
+  }
+}
+
+.emptyState {
+  display: grid;
+  min-height: 255px;
+  place-items: center;
+  color: #969790;
+  font-size: 12px;
+  text-align: center;
+
+  p { margin: 0; }
+}
+
+@keyframes rowIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 520px) {
+  .list { gap: 8px; padding: 10px 0 12px; }
+  .row { min-height: 60px; gap: 8px; padding: 11px 10px; }
+  .checkButton { width: 22px; height: 22px; }
+  .deleteButton { width: 36px; height: 36px; }
+  .content { gap: 6px; }
+  .text { font-size: 14px; }
+  .description { padding: 8px 9px; font-size: 12px; }
+  .emptyState { min-height: 180px; }
+}

@@ -1,0 +1,125 @@
+.pageShell {
+  width: min(680px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 48px 0 60px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -.55px;
+}
+
+.brandMark {
+  display: grid;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border: 1.5px solid #a7b6a5;
+  border-radius: 7px;
+
+  svg {
+    width: 15px;
+    height: 15px;
+    stroke: var(--accent);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+  }
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dateLabel {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.dateCompact { display: none; }
+
+.languageButton {
+  min-width: 34px;
+  height: 28px;
+  padding: 0 6px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  color: #777870;
+  font-size: 10px;
+  font-weight: 600;
+
+  &:hover { border-color: #aab9a7; color: var(--ink); }
+}
+
+.taskPanel {
+  overflow: hidden;
+  padding: 20px 22px 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.listToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 52px;
+  border-bottom: 1px solid var(--line);
+}
+
+.textButton {
+  padding: 5px 0;
+  border: 0;
+  background: transparent;
+  color: #8b8c85;
+  font-size: 10px;
+  white-space: nowrap;
+
+  &:hover { color: #a14f42; }
+}
+
+@media (max-width: 520px) {
+  .pageShell { width: calc(100% - 24px); padding: 24px 0 36px; }
+  .topbar { margin-bottom: 18px; }
+  .brand { font-size: 18px; }
+  .dateLabel { font-size: 11px; }
+  .dateFull { display: none; }
+  .dateCompact { display: inline; }
+  .headerActions { gap: 8px; }
+  .languageButton { min-width: 36px; height: 32px; }
+  .taskPanel { padding: 14px 12px 0; }
+  .listToolbar { flex-wrap: wrap; gap: 0; padding: 4px 0; }
+  .textButton {
+    min-height: 34px;
+    max-width: 100%;
+    margin-left: auto;
+    padding: 4px 0;
+    font-size: 10px;
+    text-align: right;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 360px) {
+  .pageShell { width: calc(100% - 20px); }
+  .taskPanel { padding-right: 10px; padding-left: 10px; }
+}

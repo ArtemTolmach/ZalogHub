@@ -1,0 +1,61 @@
+.form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas: 'title add' 'description description';
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid var(--line);
+}
+
+.titleInput { grid-area: title; }
+.descriptionInput { grid-area: description; }
+
+.form input {
+  width: 100%;
+  min-width: 0;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #e5e6e1;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 13px;
+  outline: 0;
+  transition: border-color .15s ease;
+
+  &:focus { border-color: #aab9a7; }
+  &::placeholder { color: #a1a29c; }
+}
+
+.addButton {
+  grid-area: add;
+  height: 40px;
+  padding: 0 15px;
+  border: 1px solid #343832;
+  border-radius: 8px;
+  background: #343832;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 550;
+  transition: background .15s ease, border-color .15s ease, opacity .15s ease;
+
+  &:hover:not(:disabled) { border-color: #4d5b4d; background: #4d5b4d; }
+  &:disabled { cursor: not-allowed; opacity: .42; }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 520px) {
+  .form { gap: 8px; padding-bottom: 14px; }
+  .form input { height: 44px; padding: 0 11px; font-size: 14px; }
+  .addButton { height: 44px; padding: 0 13px; font-size: 12px; }
+}
